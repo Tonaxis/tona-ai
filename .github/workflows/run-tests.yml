@@ -25,5 +25,5 @@ jobs:
 
       - name: Run tests
         run: |
-          python -m unittest discover tona-ai/core/tests
-          python -m unittest discover tona-ai/neat/tests
+          python -m unittest discover tona_ai/core/tests
+          python -m unittest discover tona_ai/neat/tests
