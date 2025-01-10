@@ -142,7 +142,7 @@ for synapse in synapses:
 
 # Create the neural network
 # Layered parameter is required, to define if the network is organized into strict layers
-nn = NeuralNetwork(neurons=neurons, synapses=synapses)
+nn = NeuralNetwork(layered=True, neurons=neurons, synapses=synapses)
 ```
 Example code available [here](./examples/xor_neural_network.py)!
 

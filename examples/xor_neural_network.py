@@ -1,4 +1,5 @@
-from tona_ai import ActivationFunction, Layer, LayerType, NeuralNetwork, Neuron, Synapse
+from tona_ai import (ActivationFunction, Layer, LayerType, NeuralNetwork,
+                     Neuron, Synapse)
 
 # Define the layers
 input_layer = Layer(layer_type=LayerType.INPUT)
@@ -59,7 +60,7 @@ result_4 = nn.forward([1.0, 1.0])
 
 # Print the results
 print("Results for the XOR gate:")
-print(f"Result for 0 and 0: {result_1}, rounded: {round(result_1[0])}, expected: 0 {"OK" if round(result_1[0]) == 0 else "NOT OK"}")
-print(f"Result for 0 and 1: {result_2}, rounded: {round(result_2[0])}, expected: 1 {"OK" if round(result_2[0]) == 1 else "NOT OK"}")
-print(f"Result for 1 and 0: {result_3}, rounded: {round(result_3[0])}, expected: 1 {"OK" if round(result_3[0]) == 1 else "NOT OK"}")
-print(f"Result for 1 and 1: {result_4}, rounded: {round(result_4[0])}, expected: 0 {"OK" if round(result_4[0]) == 0 else "NOT OK"}")
+print(f"Result for 0 and 0: {result_1}, rounded: {round(result_1[0])}, expected: 0 {'OK' if round(result_1[0]) == 0 else 'NOT OK'}")
+print(f"Result for 0 and 1: {result_2}, rounded: {round(result_2[0])}, expected: 1 {'OK' if round(result_2[0]) == 1 else 'NOT OK'}")
+print(f"Result for 1 and 0: {result_3}, rounded: {round(result_3[0])}, expected: 1 {'OK' if round(result_3[0]) == 1 else 'NOT OK'}")
+print(f"Result for 1 and 1: {result_4}, rounded: {round(result_4[0])}, expected: 0 {'OK' if round(result_4[0]) == 0 else 'NOT OK'}")
