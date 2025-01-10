@@ -29,8 +29,8 @@ jobs:
       - name: Build release distributions
         run: |
           echo INSTALL 
-          pip install --upgrade pip
-          pip install setuptools wheel
+          python -m pip install --user --upgrade pip
+          python -m pip install --user --upgrade setuptools wheel
           echo BUILD
           python setup.py sdist bdist_wheel
 
