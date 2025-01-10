@@ -66,7 +66,7 @@ Tona AI allows you to create a custom neural network. You have access to each **
 #### Create a neural network
 To create a neural network, you can simply use the ``create()`` method of the **NeuralNetwork** class:
 ```python
-from tona_ai.core import ActivationFunction, NeuralNetwork
+from tona_ai import ActivationFunction, NeuralNetwork
 
 # Layered parameter is required, to define if the network is organized into strict layers
 nn = NeuralNetwork(layered=False)
@@ -84,7 +84,7 @@ Example code available [here](./examples/creation_neural_network.py)!
 
 Or you can manually create the neurons and the connections between them:
 ```python
-from tona_ai.core import (
+from tona_ai import (
     ActivationFunction,
     Layer,
     LayerType,
@@ -169,7 +169,7 @@ The environment is essential as it defines how individuals are evaluated and how
 
 To create an environment, simply create a class inheriting from the Environment class:
 ```python
-from tona_ai.neat import Environment, Individual
+from tona_ai import Environment, Individual
 
 # Create a simple XOR environment
 class XorEnvironment(Environment):
