@@ -7,8 +7,8 @@ setup(
     author="Tonaxis",
     # author_email="",
     url="https://github.com/tonaxis/tona-ai",
-    # long_description=open('README.md').read(),
-    # long_description_content_type="text/markdown",
+    long_description=open("README.md").read(),
+    long_description_content_type="text/markdown",
     packages=find_packages(exclude=("tests")),
     python_requires=">=3.4",
     classifiers=[
