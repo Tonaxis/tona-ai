@@ -25,6 +25,8 @@
     - [Usage](#usage)
         - [Create a neural network](#create-a-neural-network)
         - [Execute a neural network](#execute-a-neural-network)
+        - [Save a neural network](#save-a-neural-network)
+        - [Load a neural network](#load-a-neural-network)
 - [NEAT (WIP)](#neat)
     - [Disclaimer](#disclaimer)
     - [Explanations](#explanations-1)
@@ -155,6 +157,18 @@ result_3 = nn.forward([1.0, 0.0])  # [0.8807970779778823]
 result_4 = nn.forward([1.0, 1.0])  # [0.11920292202211755]
 ```
 Example code available [here](./examples/xor_neural_network.py)!
+
+#### Save a neural network
+```python
+nn.save("my_network.pkl")
+```
+Example code available [here](./examples/creation_neural_network.py)!
+
+#### Load a neural network
+```python
+loaded_nn = NeuralNetwork.load("my_network.pkl")
+```
+Example code available [here](./examples/creation_neural_network.py)!
 
 ## NEAT
 ### DISCLAIMER

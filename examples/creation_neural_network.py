@@ -11,3 +11,7 @@ nn.create(
     dense=True,
     output_activation_function=ActivationFunction.TANH,
 )
+
+nn.save("test_network.pkl")
+
+loaded_nn = NeuralNetwork.load("test_network.pkl")
