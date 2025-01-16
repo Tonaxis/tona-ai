@@ -113,6 +113,15 @@ class TestNeuralNetwork(unittest.TestCase):
         self.assertEqual(self.nn.synapses[0].in_neuron, self.nn.input_layer[0])
         self.assertEqual(self.nn.synapses[0].out_neuron, self.nn.output_layer[0])
 
+    def test_neural_network_save_and_load(self):
+        """
+        Test the save and load methods for the NeuralNetwork class.
+        """
+        self.nn.save("test_network.pkl")
+        loaded_nn = NeuralNetwork.load("test_network.pkl")
+        self.assertEqual(len(loaded_nn.neurons), len(self.nn.neurons))
+        self.assertEqual(len(loaded_nn.synapses), len(self.nn.synapses))
+
 
 if __name__ == "__main__":
     unittest.main()

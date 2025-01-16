@@ -1,3 +1,4 @@
+import pickle
 import random
 
 from tona_ai.core.activation_function import ActivationFunction
@@ -192,3 +193,24 @@ class NeuralNetwork:
         self.neurons.append(neuron)
         self.last_neuron_id_added += 1
         return neuron
+
+    def save(self, filename: str):
+        """Saves the neural network to a file.
+
+        Args:
+            filename (str): The name of the file to save the network to.
+        """
+        with open(filename, "wb") as file:
+            pickle.dump(self, file)
+
+    def load(filename: str) -> "NeuralNetwork":
+        """Loads a neural network from a file.
+
+        Args:
+            filename (str): The name of the file to load the network from.
+
+        Returns:
+            NeuralNetwork: The loaded neural network.
+        """
+        with open(filename, "rb") as file:
+            return pickle.load(file)
