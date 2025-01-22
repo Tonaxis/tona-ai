@@ -6,6 +6,17 @@ from tona_ai.neat.individual import Individual
 from tona_ai.neat.population import Population
 
 
+# Create a dummy environment class for fitness evaluation
+class DummyEnvironment(Environment):
+    def __init__(self):
+        self.count = 0
+
+    def run(self, individual: Individual):
+        self.count += 1
+        individual.fitness = self.count
+        return self.count
+
+
 class TestPopulation(unittest.TestCase):
     """
     Unit tests for the Population class.
@@ -48,15 +59,6 @@ class TestPopulation(unittest.TestCase):
         """
         Test the evaluate method which sorts individuals based on their fitness.
         """
-
-        # Create a dummy environment class for fitness evaluation
-        class DummyEnvironment(Environment):
-            def __init__(self):
-                self.count = 0
-
-            def run(self, individual: Individual):
-                self.count += 1
-                individual.fitness = self.count
 
         environment = DummyEnvironment()
 

@@ -1,3 +1,4 @@
+import concurrent.futures
 import copy
 
 from tona_ai.neat.environment import Environment
@@ -62,8 +63,12 @@ class Population:
             float: The highest fitness score in the population after evaluation.
         """
         # Run each individual in the environment to evaluate their fitness
-        for individual in self.individuals:
-            environment.run(individual)
+        results = []
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            results = list(executor.map(environment.run, self.individuals))
+
+        for individual, result in zip(self.individuals, results):
+            individual.fitness = result or 0
 
         # Sort individuals by their fitness in descending order
         self.individuals.sort(key=lambda x: x.fitness, reverse=True)
