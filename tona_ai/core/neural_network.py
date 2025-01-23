@@ -203,7 +203,7 @@ class NeuralNetwork:
         with open(filename, "wb") as file:
             pickle.dump(self, file)
 
-    def load(filename: str) -> "NeuralNetwork":
+    def load(self, filename: str) -> "NeuralNetwork":
         """Loads a neural network from a file.
 
         Args:
