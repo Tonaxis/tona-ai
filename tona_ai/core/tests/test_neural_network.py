@@ -118,7 +118,7 @@ class TestNeuralNetwork(unittest.TestCase):
         Test the save and load methods for the NeuralNetwork class.
         """
         self.nn.save("test_network.pkl")
-        loaded_nn = NeuralNetwork.load("test_network.pkl")
+        loaded_nn = NeuralNetwork.load(filename="test_network.pkl")
         self.assertEqual(len(loaded_nn.neurons), len(self.nn.neurons))
         self.assertEqual(len(loaded_nn.synapses), len(self.nn.synapses))
 
